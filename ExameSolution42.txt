@@ -1,0 +1,730 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    ExameSolution42.txt                                :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ajoao <marvin@42.fr>                       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/10/02 22:38:59 by ajoao             #+#    #+#              #
+#    Updated: 2025/10/02 22:39:27 by ajoao            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#include <unistd.h>
+
+int		main(int argc, char *argv[])
+{
+	int		i;
+
+	i = 0;
+	if (argc != 2)
+	{
+		write(1, "a\n", 2);
+		return (0);
+	}
+	else
+	{
+		while (argv[1][i])
+		{
+			if (argv[1][i] == 'a')
+			{
+				write(1, "a", 1);
+				break ;
+			}
+			i += 1;
+		}
+		write(1, "\n", 1);
+		return (0);
+	}
+}
+
+
+////////////////////////////////
+#include <unistd.h>
+
+int	main(void)
+{
+	write(1, "9876543210\n", 11);
+}
+
+///////////////////////////
+
+#include <unistd.h>
+
+int	main(void)
+{
+	write(1, "9876543210\n", 11);
+}
+//////////////////////////////////
+#include <unistd.h>
+
+int		main(void)
+{
+	write(1, "Hello World!\n", 13);
+	return (0);
+}	
+//////////////////////
+#include <unistd.h>
+
+int		main(void)
+{
+	write(1, "aBcDeFgHiJkLmNoPqRsTuVwXyZ\n", 27);
+	return (0);
+}
+
+////////////////////////
+
+#include <unistd.h>
+
+int	main(int argc, char *argv[])
+{
+	int	i;
+
+	i = 0;
+	if (argc < 2)
+	{
+		write(1, "\n", 1);
+	}
+	else
+	{
+		while (argv[1][i])
+		{
+			write(1, &argv[1][i++], 1);
+		}
+		write(1, "\n", 1);
+	}
+	return (0);
+}
+
+////////////////////////
+
+#include <unistd.h>
+
+int		main(int argc, char *argv[])
+{
+	int	i;
+
+	i = -1;
+	if (argc > 1)
+	{
+		while (argv[argc - 1][++i])
+		{
+			write(1, &argv[argc - 1][i], 1);
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+
+//////////////////////////////////
+
+#include <unistd.h>
+
+int	main(int argc, char *argv[])
+{
+	write(1, "zYxWvUtSrQpOnMlKjIhGfEdCbA\n", 27);
+}
+
+//////////
+
+Only a
+
+#include <unistd.h>
+
+int	main(void)
+{
+	write(1, "a", 1);
+	return (0);
+}
+
+/////////////////
+
+#include <unistd.h>
+
+int	main(void)
+{
+	write(1, "z", 1);
+}
+
+///////////////////
+
+#include <unistd.h>
+
+int	main(int argc, char **argv)
+{
+	(void)argc;
+	(void)argv;
+	write(1, "z\n", 2);
+	return (0);
+}
+
+////////////////////
+
+char	*ft_strcpy(char *s1, char *s2)
+{
+	while ((*s1++ = *s2++))
+		;
+	return (s1);
+}
+
+////////////////////
+
+
+char *ft_strcpy(char *dest, char *src)
+{
+	int i;
+
+	i = 0;
+	while(src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+/////////////////////
+
+
+#include <stdio.h>
+
+char *ft_strcpy(char *dest, char *src);
+	
+int main(void)
+{
+	char hero[] = "pacman";
+	char villian [] = "frogger";
+
+	ft_strcpy(hero, villian);
+	printf("%s\n", hero);
+	return 0;
+}
+
+////////////////////
+
+#include <stdio.h>
+
+char *ft_strcpy(char *s1, char *s2);
+
+int main(void)
+{
+    char boy[] = "harry";
+    char girl[] = "sally";
+
+    printf("boy is: %s\n", boy);
+    printf("girl is: %s\n", girl);
+    ft_strcpy(boy, girl);
+    printf("boy is: %s\n", boy);
+    return (0);
+}
+/////////////////////
+
+
+int	ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+/////////////////////////
+
+#include <stdio.h>
+
+int ft_strlen(char *str);
+
+int main(void)
+{
+    char monster[] = "ogrefly";
+    printf("%s has %d characters", monster, ft_strlen(monster));
+    return (0);
+}
+
+///////////////
+
+
+#include <unistd.h>
+int	main(int ac, char **av)
+{
+	int	letter;
+	int	repeat;
+
+	if (ac == 2)
+	{
+		letter = 0;
+		while (av[1][letter])
+		{
+			repeat = 1;
+			if (av[1][letter] >= 'a' && av[1][letter] <= 'z')
+				repeat += av[1][letter] - 'a';
+			else if (av[1][letter] >= 'A' && av[1][letter] <= 'Z')
+				repeat += av[1][letter] - 'A';
+			while (repeat)
+			{
+				write(1, &av[1][letter], 1);
+				repeat--;
+			}
+			letter++;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+
+
+////////////////////
+
+
+#include <unistd.h>
+
+int		main(int argc, char *argv[])
+{
+	int             i;
+	int             letter;
+
+	i = 0;
+	if (argc == 2)
+	{
+		while (argv[1][i])
+		{
+			letter = 0;
+			if (argv[1][i] >= 'A' && 'Z' >= argv[1][i])
+			{
+				letter = argv[1][i] - 63;
+				while (--letter)
+					write(1, &argv[1][i], 1);
+			}
+			else if (argv[1][i] >= 'a' && 'z' >= argv[1][i])
+			{
+				letter = argv[1][i] - 95;
+				while (--letter)
+					write(1, &argv[1][i], 1);
+			}
+			else
+				write(1, &argv[1][i], 1);
+			i += 1;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+
+////////////////
+
+#include <unistd.h>
+
+int	letter_count(char c)
+{
+	int	repeat;
+
+	if (c > 'A' && c <= 'Z')
+		repeat = c - 'A' + 1;
+	else if (c >= 'a' && c <= 'z')
+		repeat = c - 'a' + 1;
+	else
+		repeat = 1;
+	return (repeat);
+}
+
+int	main(int ac, char **av)
+{
+	int	repeat;
+
+	if (ac == 2)
+	{
+		while (*av[1])
+		{
+			repeat = letter_count(*av[1]);
+				while (repeat--)
+					write(1, av[1], 1);
+			av[1]++;
+		}
+	}
+	write(1, "\n", 1);
+}
+
+//////////////////////
+
+#include <unistd.h>
+
+int	main(int argc, char *argv[])
+{
+	int	i;
+
+	i = 0;
+	if (argc == 4)
+	{
+		if (!argv[2][1] && !argv[3][1])
+		{
+			while (argv[1][i])
+			{
+				if (argv[1][i] == argv[2][0])
+					write(1, &argv[3][0], 1);
+				else
+					write(1, &argv[1][i], 1);
+				i += 1;
+			}
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+///////////////////////////////
+
+ulstr
+
+
+#include <unistd.h>
+
+int	main(int argc, char *argv[])
+{
+	int		i;
+	char 	letter;
+
+	i = 0;
+	if (argc == 2)
+	{
+		while (argv[1][i])
+		{
+			letter = argv[1][i];
+			if (argv[1][i] >= 'A' && 'Z' >= argv[1][i])
+				letter += 32;
+			if (argv[1][i] >= 'a' && 'z' >= argv[1][i])
+				letter -= 32;
+			write(1, &letter, 1);
+			i += 1;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+
+////////////////////
+
+#include <unistd.h>
+
+void	ulstr(char *s)
+{
+	char	c;
+
+	while (*s)
+	{
+		if (*s >= 'a' && *s <= 'z')
+			c = *s - 32;
+		else if (*s >= 'A' && *s <= 'Z')
+			c = *s + 32;
+		else
+			c = *s;
+		write(1, &c, 1);
+		s++;
+	}
+}
+
+int		main(int argc, char **argv)
+{
+	if (argc == 2)
+		ulstr(argv[1]);
+	write(1, "\n", 1);
+	return (0);
+}
+
+//////////////////
+
+#include <unistd.h>
+
+int		ft_putchar(char c)
+{
+	return (write(1, &c , 1));
+}
+
+void	ft_rot_13(char *str)
+{
+	while (*str++)
+	{
+		if ('a' <= *(str - 1) && *(str - 1) <= 'z')
+			ft_putchar(((*(str - 1) - 'a' + 13) % 26) + 'a');
+		else if ('A' <= *(str - 1) && *(str - 1) <= 'Z')
+			ft_putchar(((*(str - 1) - 'A' + 13) % 26) + 'A');
+		else
+			ft_putchar(*(str - 1));
+	}
+}
+
+int	main(int ac, char *av[])
+{
+	if (ac == 2)
+		ft_rot_13(av[1]);
+	ft_putchar('\n');
+	return (0);
+}
+
+/////////////////////////
+
+#include <unistd.h>
+
+int	main(int argc, char *argv[])
+{
+	int	i;
+	char mvup;
+	char mvdwn;
+
+	i = 0;
+	if (argc == 2)
+	{
+		while (argv[1][i])
+		{
+			mvup = argv[1][i] + 13;
+			mvdwn = argv[1][i] - 13;
+			if (('A' <= argv[1][i] && 'M' >= argv[1][i])
+				|| ('a' <= argv[1][i] && 'm' >= argv[1][i]))
+					write(1, &mvup, 1);
+			else if (('N' <= argv[1][i] && 'Z' >= argv[1][i])
+					|| ('n' <= argv[1][i] && 'z' >= argv[1][i]))
+				write(1, &mvdwn, 1);
+			else
+				write(1, &argv[1][i], 1);
+			i += 1;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+
+///////////////////
+
+#include <unistd.h>
+
+int	main(int ac, char **av)
+{
+	int	i;
+
+	if (ac > 1)
+	{
+		i = 0;
+		while(av[1][i])
+		{
+			if (av[1][i] >= 'a' && av[1][i] <= 'z')
+				av[1][i] = (av[1][i] - 'a' + 13) % 26 + 'a';
+			else if (av[1][i] >= 'A' && av[1][i] <= 'Z')
+					av[1][i] = (av[1][i] - 'A' + 13) % 26 + 'A';
+			write(1, &av[1][i], 1);
+			i++;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+
+/////////////
+
+#include <unistd.h>
+
+int	main(int ac, char **av)
+{
+	if (ac == 2)
+	{
+		while (*av[1] && (*av[1] == ' ' || *av[1] == '\t' || *av[1] == '\n'
+					|| *av[1] == '\r' || *av[1] == '\v' || *av[1] == '\f'))
+			++av[1];
+		while (*av[1] != '\0' && (*av[1] != ' ' && *av[1] != '\t' && *av[1] != '\n'
+					&& *av[1] != '\r' && *av[1] != '\v' && *av[1] != '\f'))
+			write(1, av[1]++, 1);
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+
+//////////////////
+#include <unistd.h>
+int	ft_isspace(int i)
+{
+	if (i == '\t' || i == '\n' || i == '\r' || i == '\v' || i == '\f' || i == ' ')
+		return (1);
+	return (0);
+}
+
+int	main(int argc, char *argv[])
+{
+	int	i;
+
+	i = 0;
+	if (argc == 2)
+	{
+		while (ft_isspace((argv[1][i])))
+			i += 1;
+		while (!(ft_isspace(argv[1][i])) && argv[1][i])
+			write(1, &argv[1][i++], 1);
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+
+//////////////////////
+
+void ft_swap(int *a, int *b)
+{
+	int tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+///////////////
+
+#include <stdio.h>
+void ft_swap(int *a, int *b);
+
+int main(void)
+{
+	int old_age = 223;
+	int young_age = 1;
+	printf("old_age: %d\nyoung_age: %d\n", old_age, young_age);
+	ft_swap(&old_age, &young_age);
+	printf("swap them ages!\n");
+	printf("old_age: %d\nyoung_age: %d\n", old_age, young_age);
+	return (0);
+}
+////////////////////
+
+#include <unistd.h>
+
+int	main(int ac, char *av[])
+{
+	int	i;
+
+	if (ac == 2)
+	{
+		i = 0;
+		while (av[1][i])
+			i += 1;
+		while (i)
+			write(1, &av[1][--i], 1);
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+
+////////////////////////
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int		ft_strlen(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+int		main(int ac, char **av)
+{
+	int	len;
+
+	if (ac == 2)
+	{
+		len = ft_strlen(av[1]);
+		while (len--)
+			write(1, &av[1][len], 1);
+	}
+	ft_putchar('\n');
+}
+
+////////////////
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	rotone(char *s)
+{
+	while (*s)
+	{
+		if ((*s >= 'A' && *s <= 'Y') || (*s >= 'a' && *s <= 'y'))
+			ft_putchar(*s + 1);
+		else if (*s == 'Z' || *s == 'z')
+			ft_putchar(*s - 25);
+		else
+			ft_putchar(*s);
+		++s;
+	}
+}
+
+int		main(int ac, char **av)
+{
+	if (ac == 2)
+		rotone(av[1]);
+	ft_putchar('\n');
+	return (0);
+}
+
+/////////////////
+
+#include <unistd.h>
+
+int		main(int argc, char *argv[])
+{
+	int		i;
+	char	ltr;
+
+	i = 0;
+	if (argc == 2)
+	{
+		while (argv[1][i])
+		{
+			ltr = argv[1][i];
+			if (argv[1][i] >= 'A' && argv[1][i] <= 'Y')
+				ltr += 1;
+			if (argv[1][i] >= 'a' && argv[1][i] <= 'y')
+				ltr += 1;
+			if (argv[1][i] == 'Z' || argv[1][i] == 'z')
+				ltr -= 25;
+			write(1, &ltr, 1);
+			i += 1;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+////////////////////
+
+atoi
+
+int	ft_atoi(char *str)
+{
+	int result;
+	int sign;
+
+	result = 0;
+	sign = 1;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-')
+		sign = -1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
+	{
+		result = result * 10 + *str - '0';
+		str++;
+	}
+	return (sign * result);
+}
+
+//////////
+2.0
+ATOI
+ATOI
